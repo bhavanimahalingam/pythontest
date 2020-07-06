@@ -3,15 +3,13 @@ import importlib
 import pip
 from pip._internal import main
 import pkg_resources
-fileloc=r"D:\Bhavani\python\source.py"
-print(fileloc)
 tummyArray=[]
 build_in_mod=sys.modules
 #print(build_in_mod)
 installed = [pkg.key for pkg in pkg_resources.working_set]
 print(installed)
 pkgs=[]
-with open(fileloc,'r') as t:
+with open('app.py','r') as t:
 
     for lines in t:
         target = "import"
