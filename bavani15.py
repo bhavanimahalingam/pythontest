@@ -1,13 +1,11 @@
 import sys
 import importlib
 import pip
-from pip._internal import main
 import pkg_resources
 tummyArray=[]
 build_in_mod=sys.modules
 #print(build_in_mod)
 installed = [pkg.key for pkg in pkg_resources.working_set]
-print(installed)
 pkgs=[]
 with open('app.py','r') as t:
 
@@ -23,7 +21,7 @@ with open('app.py','r') as t:
 
 if len(pkgs) is not 0:
     print(pkgs)
-    main(['install'] + pkgs)
+    pip.main(['install'] + pkgs)
     print("******************")
 else:
     print("All the Packages are installed...")
